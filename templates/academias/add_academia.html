@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Academia - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+    <h5><b>Cadastro de Academia</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                   <label for="{{ form.name.id_for_label }}">Nome</label>
+                   {{ form.name|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.address.id_for_label }}">Endereco</label>
+                    {{ form.address|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.cidade.id_for_label }}">Cidade</label>
+                  {{ form.cidade|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.academia_category.id_for_label }}">Categorias Disponiveis</label>
+                    {{ form.academia_category|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.academia_treinador.id_for_label }}">Treinadores</label>
+                    {{ form.academia_treinador|add_class:"form-control" }}
+                </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
